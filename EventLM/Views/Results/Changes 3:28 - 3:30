@@ -1,0 +1,770 @@
+diff --git a/EventLM.xcodeproj/project.pbxproj b/EventLM.xcodeproj/project.pbxproj
+index 486303f..108c392 100644
+--- a/EventLM.xcodeproj/project.pbxproj
++++ b/EventLM.xcodeproj/project.pbxproj
+@@ -33,6 +33,7 @@
+ 		43B5B51829A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B5B51729A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift */; };
+ 		43C2102B29C48AA0001D9C09 /* SportScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C2102A29C48AA0001D9C09 /* SportScrollView.swift */; };
+ 		43DC2FFA29C5981700DC7325 /* ManageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC2FF929C5981700DC7325 /* ManageData.swift */; };
++		43E05F2729D45F570067FEF0 /* ResultsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E05F2629D45F570067FEF0 /* ResultsDetailView.swift */; };
+ 		8A50FEFD04C291A6DF85F154 /* Pods_EventLM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F669F33CB501E076495BA897 /* Pods_EventLM.framework */; };
+ /* End PBXBuildFile section */
+ 
+@@ -84,6 +85,8 @@
+ 		43B5B51729A9096B007EA1D8 /* EventLMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+ 		43C2102A29C48AA0001D9C09 /* SportScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportScrollView.swift; sourceTree = "<group>"; };
+ 		43DC2FF929C5981700DC7325 /* ManageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageData.swift; sourceTree = "<group>"; };
++		43E05F2629D45F570067FEF0 /* ResultsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsDetailView.swift; sourceTree = "<group>"; };
++		43E05F2829D460520067FEF0 /* EventLM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventLM.entitlements; sourceTree = "<group>"; };
+ 		F363C8758D9E9DBBD40F89B8 /* Pods-EventLM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventLM.release.xcconfig"; path = "Target Support Files/Pods-EventLM/Pods-EventLM.release.xcconfig"; sourceTree = "<group>"; };
+ 		F669F33CB501E076495BA897 /* Pods_EventLM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventLM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+ /* End PBXFileReference section */
+@@ -171,6 +174,7 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				4336C23C29AE35F3005AD824 /* ResultsView.swift */,
++				43E05F2629D45F570067FEF0 /* ResultsDetailView.swift */,
+ 				43AFDB7F29B8DD890060D967 /* ResultBox.swift */,
+ 			);
+ 			path = Results;
+@@ -228,6 +232,7 @@
+ 		43B5B4F929A90969007EA1D8 /* EventLM */ = {
+ 			isa = PBXGroup;
+ 			children = (
++				43E05F2829D460520067FEF0 /* EventLM.entitlements */,
+ 				43B5B4FA29A90969007EA1D8 /* EventLMApp.swift */,
+ 				433D225029AF965600A32DF8 /* Authentication */,
+ 				4336C23429AE341E005AD824 /* Views */,
+@@ -464,6 +469,7 @@
+ 				43DC2FFA29C5981700DC7325 /* ManageData.swift in Sources */,
+ 				4336C23729AE34C2005AD824 /* Constants.swift in Sources */,
+ 				43C2102B29C48AA0001D9C09 /* SportScrollView.swift in Sources */,
++				43E05F2729D45F570067FEF0 /* ResultsDetailView.swift in Sources */,
+ 				4333AA1C29C20CF30060BB5B /* Path.swift in Sources */,
+ 				4336C23B29AE35E6005AD824 /* EventView.swift in Sources */,
+ 				4387BE8F29CC7189004EC86A /* User.swift in Sources */,
+@@ -623,10 +629,11 @@
+ 			buildSettings = {
+ 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
++				CODE_SIGN_ENTITLEMENTS = EventLM/EventLM.entitlements;
+ 				CODE_SIGN_STYLE = Automatic;
+ 				CURRENT_PROJECT_VERSION = 1;
+ 				DEVELOPMENT_ASSET_PATHS = "\"EventLM/Preview Content\"";
+-				DEVELOPMENT_TEAM = 76XQW8ZLJN;
++				DEVELOPMENT_TEAM = WB85QVFKQZ;
+ 				ENABLE_PREVIEWS = YES;
+ 				GENERATE_INFOPLIST_FILE = YES;
+ 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+@@ -639,7 +646,7 @@
+ 					"@executable_path/Frameworks",
+ 				);
+ 				MARKETING_VERSION = 1.0;
+-				PRODUCT_BUNDLE_IDENTIFIER = OBE.EventLM;
++				PRODUCT_BUNDLE_IDENTIFIER = OBES.EventLM;
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SWIFT_EMIT_LOC_STRINGS = YES;
+ 				SWIFT_VERSION = 5.0;
+@@ -653,10 +660,11 @@
+ 			buildSettings = {
+ 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
++				CODE_SIGN_ENTITLEMENTS = EventLM/EventLM.entitlements;
+ 				CODE_SIGN_STYLE = Automatic;
+ 				CURRENT_PROJECT_VERSION = 1;
+ 				DEVELOPMENT_ASSET_PATHS = "\"EventLM/Preview Content\"";
+-				DEVELOPMENT_TEAM = 76XQW8ZLJN;
++				DEVELOPMENT_TEAM = WB85QVFKQZ;
+ 				ENABLE_PREVIEWS = YES;
+ 				GENERATE_INFOPLIST_FILE = YES;
+ 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+@@ -669,7 +677,7 @@
+ 					"@executable_path/Frameworks",
+ 				);
+ 				MARKETING_VERSION = 1.0;
+-				PRODUCT_BUNDLE_IDENTIFIER = OBE.EventLM;
++				PRODUCT_BUNDLE_IDENTIFIER = OBES.EventLM;
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SWIFT_EMIT_LOC_STRINGS = YES;
+ 				SWIFT_VERSION = 5.0;
+diff --git a/EventLM/Assets.xcassets/Conestoga.imageset/Conestoga.png b/EventLM/Assets.xcassets/Conestoga.imageset/Conestoga.png
+new file mode 100644
+index 0000000..c96be41
+Binary files /dev/null and b/EventLM/Assets.xcassets/Conestoga.imageset/Conestoga.png differ
+diff --git a/EventLM/Assets.xcassets/Conestoga.imageset/Contents.json b/EventLM/Assets.xcassets/Conestoga.imageset/Contents.json
+new file mode 100644
+index 0000000..b713cbe
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Conestoga.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Conestoga.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Crown.imageset/Contents.json b/EventLM/Assets.xcassets/Crown.imageset/Contents.json
+new file mode 100644
+index 0000000..cc0f0b4
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Crown.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Crown.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Crown.imageset/Crown.png b/EventLM/Assets.xcassets/Crown.imageset/Crown.png
+new file mode 100644
+index 0000000..5b5bbc3
+Binary files /dev/null and b/EventLM/Assets.xcassets/Crown.imageset/Crown.png differ
+diff --git a/EventLM/Assets.xcassets/Garnet Valley.imageset/Contents.json b/EventLM/Assets.xcassets/Garnet Valley.imageset/Contents.json
+new file mode 100644
+index 0000000..0d0c0f0
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Garnet Valley.imageset/Contents.json	
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Garnet Valley.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Garnet Valley.imageset/Garnet Valley.png b/EventLM/Assets.xcassets/Garnet Valley.imageset/Garnet Valley.png
+new file mode 100644
+index 0000000..58abafc
+Binary files /dev/null and b/EventLM/Assets.xcassets/Garnet Valley.imageset/Garnet Valley.png differ
+diff --git a/EventLM/Assets.xcassets/Haverford.imageset/Contents.json b/EventLM/Assets.xcassets/Haverford.imageset/Contents.json
+new file mode 100644
+index 0000000..2081ae4
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Haverford.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Haverford.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Haverford.imageset/Haverford.png b/EventLM/Assets.xcassets/Haverford.imageset/Haverford.png
+new file mode 100644
+index 0000000..e42e36e
+Binary files /dev/null and b/EventLM/Assets.xcassets/Haverford.imageset/Haverford.png differ
+diff --git a/EventLM/Assets.xcassets/Penncrest.imageset/Contents.json b/EventLM/Assets.xcassets/Penncrest.imageset/Contents.json
+new file mode 100644
+index 0000000..5301c02
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Penncrest.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Penncrest.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Penncrest.imageset/Penncrest.png b/EventLM/Assets.xcassets/Penncrest.imageset/Penncrest.png
+new file mode 100644
+index 0000000..ca5b23a
+Binary files /dev/null and b/EventLM/Assets.xcassets/Penncrest.imageset/Penncrest.png differ
+diff --git a/EventLM/Assets.xcassets/Radnor.imageset/Contents.json b/EventLM/Assets.xcassets/Radnor.imageset/Contents.json
+new file mode 100644
+index 0000000..7e4d981
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Radnor.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Radnor.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Radnor.imageset/Radnor.png b/EventLM/Assets.xcassets/Radnor.imageset/Radnor.png
+new file mode 100644
+index 0000000..e918b13
+Binary files /dev/null and b/EventLM/Assets.xcassets/Radnor.imageset/Radnor.png differ
+diff --git a/EventLM/Assets.xcassets/Ridley.imageset/Contents.json b/EventLM/Assets.xcassets/Ridley.imageset/Contents.json
+new file mode 100644
+index 0000000..3c403c9
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Ridley.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "RidleyR-removebg-preview.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Ridley.imageset/RidleyR-removebg-preview.png b/EventLM/Assets.xcassets/Ridley.imageset/RidleyR-removebg-preview.png
+new file mode 100644
+index 0000000..c8562c7
+Binary files /dev/null and b/EventLM/Assets.xcassets/Ridley.imageset/RidleyR-removebg-preview.png differ
+diff --git a/EventLM/Assets.xcassets/Strath Haven.imageset/Contents.json b/EventLM/Assets.xcassets/Strath Haven.imageset/Contents.json
+new file mode 100644
+index 0000000..e6a0a98
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Strath Haven.imageset/Contents.json	
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Strath Haven.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Strath Haven.imageset/Strath Haven.png b/EventLM/Assets.xcassets/Strath Haven.imageset/Strath Haven.png
+new file mode 100644
+index 0000000..b564b11
+Binary files /dev/null and b/EventLM/Assets.xcassets/Strath Haven.imageset/Strath Haven.png differ
+diff --git a/EventLM/Assets.xcassets/Unknown.imageset/Contents.json b/EventLM/Assets.xcassets/Unknown.imageset/Contents.json
+new file mode 100644
+index 0000000..5b606e0
+--- /dev/null
++++ b/EventLM/Assets.xcassets/Unknown.imageset/Contents.json
+@@ -0,0 +1,21 @@
++{
++  "images" : [
++    {
++      "filename" : "Unknown.png",
++      "idiom" : "universal",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "author" : "xcode",
++    "version" : 1
++  }
++}
+diff --git a/EventLM/Assets.xcassets/Unknown.imageset/Unknown.png b/EventLM/Assets.xcassets/Unknown.imageset/Unknown.png
+new file mode 100644
+index 0000000..a694258
+Binary files /dev/null and b/EventLM/Assets.xcassets/Unknown.imageset/Unknown.png differ
+diff --git a/EventLM/EventLM.entitlements b/EventLM/EventLM.entitlements
+new file mode 100644
+index 0000000..0c67376
+--- /dev/null
++++ b/EventLM/EventLM.entitlements
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict/>
++</plist>
+diff --git a/EventLM/EventLMApp.swift b/EventLM/EventLMApp.swift
+index bb89be0..eac812c 100644
+--- a/EventLM/EventLMApp.swift
++++ b/EventLM/EventLMApp.swift
+@@ -25,7 +25,7 @@ struct EventLM: App {
+ 
+     var body: some Scene {
+         WindowGroup {
+-      SplashScreenView()
++            SplashScreenView()
+                 .environmentObject(path)
+                 .environmentObject(isData)
+ 
+diff --git a/EventLM/Models/Constants.swift b/EventLM/Models/Constants.swift
+index 868c6f8..b44ebc3 100644
+--- a/EventLM/Models/Constants.swift
++++ b/EventLM/Models/Constants.swift
+@@ -16,7 +16,7 @@ struct Constants{
+     static let MediumFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/22) ?? UIFont.systemFont(ofSize: 13))
+     static let GameScoreFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/12) ?? UIFont.systemFont(ofSize: 30))
+     static let SportFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/18) ?? UIFont.systemFont(ofSize: 30))
+-    
++    static let gameNameFont : Font = Font(UIFont(name: "Bebas Neue", size: UIScreen.main.bounds.width/20) ?? UIFont.systemFont(ofSize: 30))
+     
+ }
+ 
+diff --git a/EventLM/Views/Results/ResultBox.swift b/EventLM/Views/Results/ResultBox.swift
+index fb8b844..4146491 100644
+--- a/EventLM/Views/Results/ResultBox.swift
++++ b/EventLM/Views/Results/ResultBox.swift
+@@ -10,7 +10,9 @@ import SwiftUI
+ struct ResultBox: View {
+     @State var eventData: [String : String]
+     @EnvironmentObject var path : Path
+-
++    // List of all school logos stored locally within the app
++    // We also have to be really careful as the syntax is very sensitive
++    @State var logos : [String] = ["Haverford", "Penncrest", "Ridley", "Strath Haven", "Garnet Valley", "Conestoga", "Radnor", ]
+     var body: some View {
+ 
+         ZStack {
+@@ -31,21 +33,29 @@ struct ResultBox: View {
+                     Image("LMLogo")
+                         .resizable()
+                         .frame(width: (UIScreen.main.bounds.width/10), height: (UIScreen.main.bounds.width/10))
+-                    Text("Team")
++                    Text("Lower Merion")
+                         .foregroundColor(.black)
+-                        .font(Constants.GameScoreFont)
++                        .font(Constants.gameNameFont)
+                     Text(eventData["scorelm"] ?? "?")
+                         .foregroundColor(.black)
+                         .font(Constants.GameScoreFont)
+                 }
+                 HStack {
+-                    Image("badLogo")
+-                        .resizable()
+-                        .opacity(0.8)
+-                        .frame(width: (UIScreen.main.bounds.width/10), height: (UIScreen.main.bounds.width/10))
+-                    Text("Team")
++                    if logos.contains(eventData["name"] ?? "?" ){
++                        Image(eventData["name"] ?? "badLogo")
++                            .resizable()
++                            .opacity(0.8)
++                            .frame(width: (UIScreen.main.bounds.width/10), height: (UIScreen.main.bounds.width/10))
++                    }
++                    else{
++                        Image("Unknown")
++                            .resizable()
++                            .opacity(0.8)
++                            .frame(width: (UIScreen.main.bounds.width/10), height: (UIScreen.main.bounds.width/10))
++                    }
++                    Text(eventData["name"] ?? "?")
+                         .foregroundColor(.black.opacity(0.7))
+-                        .font(Constants.GameScoreFont)
++                        .font(Constants.gameNameFont)
+                     Text(eventData["scoreOpponent"] ?? "?")
+                         .foregroundColor(.black.opacity(0.7))
+                         .font(Constants.GameScoreFont)
+diff --git a/EventLM/Views/Results/ResultsDetailView.swift b/EventLM/Views/Results/ResultsDetailView.swift
+new file mode 100644
+index 0000000..06b4d23
+--- /dev/null
++++ b/EventLM/Views/Results/ResultsDetailView.swift
+@@ -0,0 +1,96 @@
++//
++//  ResultsDetailView.swift
++//  EventLM
++//
++//  Created by Owen Bress (student LM) on 3/29/23.
++//
++
++import SwiftUI
++
++struct ResultsDetailView: View {
++    @State var eventData: [String : String]
++    var body: some View {
++        VStack{
++            Text("Lower Merion vs\(eventData["name"] ?? "?")")
++                .font(.largeTitle)
++                .padding(.bottom)
++            Text(eventData["date"] ?? "_")
++            // Putting a crown over the winning teams logo
++            
++            if eventData["scorelm"] ?? "0" > eventData["scoreOpponent"] ?? "0" {
++                HStack{
++                    VStack{
++                        Image("Crown")
++                            .resizable()
++                            .frame(width: (UIScreen.main.bounds.width/4), height: (UIScreen.main.bounds.width/4))
++                        VStack{
++                            Image("LMLogo")
++                                .resizable()
++                                .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
++                            Text(eventData["scorelm"] ?? "?")
++                        }
++                    }
++                    VStack{
++                        Image(eventData["name"] ?? "badLogo")
++                            .resizable()
++                            .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
++                        Text(eventData["scoreOpponent"] ?? "?")
++                    }
++                }
++            }
++            else if eventData["scorelm"] ?? "0" < eventData["scoreOpponent"] ?? "0" {
++                HStack{
++                    VStack{
++                        Image("LMLogo")
++                            .resizable()
++                            .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
++                        Text(eventData["scorelm"] ?? "?")
++                    }
++                    VStack{
++                        Image("Crown")
++                            .resizable()
++                            .frame(width: (UIScreen.main.bounds.width/4), height: (UIScreen.main.bounds.width/4))
++                        
++                        VStack{
++                            Image(eventData["name"] ?? "badLogo")
++                                .resizable()
++                                .frame(width: (UIScreen.main.bounds.width/3), height: (UIScreen.main.bounds.width/3))
++                            Text(eventData["scoreOpponent"] ?? "?")
++                        }
++                    }
++                }
++            }
++            else{
++                Text("Draw")
++            }
++            
++            
++            
++            
++            //            if eventData["scorelm"] ?? "0" > eventData["scoreOpponent"] ?? "0" {
++            //                VStack{
++            //                    Image("Crown")
++            //                        .resizable()
++            //                    Image("LMLogo")
++            //                        .resizable()
++            //                }
++            //            }
++            //            else if eventData["scorelm"] ?? "0" < eventData["scoreOppomemt"] ?? "0" {
++            //                VStack{
++            //                    Image("Crown")
++            //                        .resizable()
++            //                    Image("LMLogo")
++            //                        .resizable()
++            //                }
++            //            }
++            //            else{
++            //                Text("draw")
++        }
++    }
++}
++
++struct ResultsDetailView_Previews: PreviewProvider {
++    static var previews: some View {
++        ResultsDetailView(eventData : [:])
++    }
++}
+diff --git a/EventLM/Views/Results/ResultsView.swift b/EventLM/Views/Results/ResultsView.swift
+index 4caee7a..45bbc1c 100644
+--- a/EventLM/Views/Results/ResultsView.swift
++++ b/EventLM/Views/Results/ResultsView.swift
+@@ -18,6 +18,7 @@ struct ResultsView: View {
+     
+     
+     var body: some View {
++        NavigationView{
+         VStack{
+             if events.count != 0{
+                 ScrollView{
+@@ -29,9 +30,11 @@ struct ResultsView: View {
+                     ],spacing:1, content: {
+                         ForEach(events, id: \.id) { i in
+                             if let event = i.value as? [String: String]{
+-                                
+-                                ResultBox(eventData : event)
+-                                
++                                NavigationLink{
++                                    ResultsDetailView(eventData: event)
++                                }label:{
++                                    ResultBox(eventData : event)
++                                }
+                             }
+                             
+                         }
+@@ -67,8 +70,8 @@ struct ResultsView: View {
+                     events = sortedEvents
+                 }
+             }
++        }.navigationTitle("Results")
+         }
+-        
+     }
+ }
+ 
+diff --git a/EventLM/Views/Schedule/HomeView.swift b/EventLM/Views/Schedule/HomeView.swift
+index b7df979..4d9758e 100644
+--- a/EventLM/Views/Schedule/HomeView.swift
++++ b/EventLM/Views/Schedule/HomeView.swift
+@@ -15,89 +15,97 @@ struct HomeView: View {
+     
+     var body: some View {
+         ZStack{
+-            ScrollView(){
+-                VStack(spacing:3) {
+-                    ForEach(events, id: \.id) { e in
+-                        if let event = e.value as? [String: String]{
+-                            ZStack {
+-                                Rectangle()
+-                                    .foregroundColor(.black.opacity(0.1))
+-                                    .cornerRadius(30)
+-                                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
+-                                    .onTapGesture {
+-                                        EventView(event: event)
+-                                    }
+-                                HStack(spacing: 20){
+-                                    VStack(spacing: 5){
+-                                        
+-                                        Text(path.lastSport)
+-                                            .font(Constants.MediumFont)
+-                                            .foregroundColor(.accentColor)
+-                                            .offset(y:UIScreen.main.bounds.height/65)
+-                                        
+-                                        
+-                                        HStack(){
+-                                            Image("LMLogo")
+-                                                .resizable()
+-                                                .scaledToFit()
+-                                                .frame(height: UIScreen.main.bounds.height/15)
+-                                                .cornerRadius(4)
+-                                                .padding(.vertical, 5)
+-                                            
+-                                            VStack(alignment: .leading, spacing: 5){
+-                                                Text(event["team1"] ?? "?")
+-                                                    .font(Constants.GameScoreFont)
+-                                                    .foregroundColor(.black)
+-                                                    .lineLimit(2)
+-                                                    .minimumScaleFactor(0.75)
+-                                            }
++            NavigationView{
++                ScrollView(){
++                    VStack(spacing:3) {
++                        ForEach(events, id: \.id) { e in
++                            if let event = e.value as? [String: String]{
++                                ZStack {
++                                    Rectangle()
++                                        .foregroundColor(.black.opacity(0.1))
++                                        .cornerRadius(30)
++                                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.75)
++                                        .onTapGesture {
++                                            EventView(event: event)
+                                         }
+-                                        HStack(){
+-                                            Image("badLogo")
+-                                                .resizable()
+-                                                .scaledToFit()
+-                                                .frame(height: UIScreen.main.bounds.height/15)
+-                                                .cornerRadius(4)
+-                                                .padding(.vertical, 5)
++                                    HStack(spacing: 20){
++                                        VStack(spacing: 5){
++                                            
++                                            Text(path.lastSport)
++                                                .font(Constants.MediumFont)
++                                                .foregroundColor(.accentColor)
++                                                .offset(y:UIScreen.main.bounds.height/65)
++                                            
+                                             
+-                                            VStack(alignment: .leading, spacing: 5){
+-                                                Text(event["team2"] ?? "?")
+-                                                    .font(Constants.GameScoreFont)
+-                                                    .foregroundColor(.black)
+-                                                    .lineLimit(2)
+-                                                    .minimumScaleFactor(0.75)
++                                            HStack(){
++                                                Image("LMLogo")
++                                                    .resizable()
++                                                    .scaledToFit()
++                                                    .frame(height: UIScreen.main.bounds.height/15)
++                                                    .cornerRadius(4)
++                                                    .padding(.vertical, 5)
+                                                 
++                                                VStack(alignment: .leading, spacing: 5){
++                                                    Text(event["team1"] ?? "?")
++                                                        .font(Constants.GameScoreFont)
++                                                        .foregroundColor(.black)
++                                                        .lineLimit(2)
++                                                        .minimumScaleFactor(0.75)
++                                                }
+                                             }
++                                            HStack(){
++                                                Image("badLogo")
++                                                    .resizable()
++                                                    .scaledToFit()
++                                                    .frame(height: UIScreen.main.bounds.height/15)
++                                                    .cornerRadius(4)
++                                                    .padding(.vertical, 5)
++                                                
++                                                VStack(alignment: .leading, spacing: 5){
++                                                    Text(event["team2"] ?? "?")
++                                                        .font(Constants.GameScoreFont)
++                                                        .foregroundColor(.black)
++                                                        .lineLimit(2)
++                                                        .minimumScaleFactor(0.75)
++                                                    
++                                                }
++                                            }
++                                            
++                                        }
++                                        Rectangle()
++                                            .frame(width: 2, height: UIScreen.main.bounds.height/6)
++                                            .foregroundColor(.black.opacity(0.4))
++                                        VStack {
++                                            Text("Date: ")
++                                                .font(Constants.SmallFont)
++                                                .foregroundColor(.accentColor)
++                                            Text(event["date"] ?? "?")
++                                                .font(Constants.SmallFont)
++                                                .foregroundColor(.secondary)
++                                            Text("Time: ")
++                                                .font(Constants.SmallFont)
++                                                .foregroundColor(.accentColor)
++                                            Text(event["time"] ?? "?")
++                                                .font(Constants.SmallFont)
++                                                .foregroundColor(.secondary)
++                                            
++                                        }
++                                        NavigationLink{
++                                            EventView()
++                                        }label: {
++                                            Image(systemName: "plus.rectangle")
++                                                .font(.system(size: UIScreen.main.bounds.width/14))
++                                                .foregroundColor(.black)
+                                         }
+                                         
+-                                    }
+-                                    Rectangle()
+-                                        .frame(width: 2, height: UIScreen.main.bounds.height/6)
+-                                        .foregroundColor(.black.opacity(0.4))
+-                                    VStack {
+-                                        Text("Date: ")
+-                                            .font(Constants.SmallFont)
+-                                            .foregroundColor(.accentColor)
+-                                        Text(event["date"] ?? "?")
+-                                            .font(Constants.SmallFont)
+-                                            .foregroundColor(.secondary)
+-                                        Text("Time: ")
+-                                            .font(Constants.SmallFont)
+-                                            .foregroundColor(.accentColor)
+-                                        Text(event["time"] ?? "?")
+-                                            .font(Constants.SmallFont)
+-                                            .foregroundColor(.secondary)
+                                         
+                                     }
+-                                    Image(systemName: "plus.rectangle")
+-                                        .font(.system(size: UIScreen.main.bounds.width/14))
+-                                        .foregroundColor(.black)
+-                                }
++                                }.navigationTitle("Schedule")
+                             }
+                         }
+                     }
+-                    
+                 }
++                
+             }
+         }
+         .task {
